@@ -1,12 +1,19 @@
 {
   "name": "@thrashplay/sample-library",
-  "version": "0.0.2-next.0",
+  "version": "0.0.2-next.1",
   "description": "Sample library, demonstrating how to share code in the monorepo.",
   "main": "dist/main.bundle.js",
   "types": "dist/index.d.ts",
   "author": "Sean Kleinjung",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "github:skleinjung/cicd-test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],

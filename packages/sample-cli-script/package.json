@@ -1,11 +1,18 @@
 {
   "name": "@thrashplay/sample-cli-script",
-  "version": "0.0.2-next.0",
+  "version": "0.0.2-next.1",
   "description": "Example CLI application, that uses a library from the monorepo.",
   "main": "dist/cli.js",
   "author": "Sean Kleinjung",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "github:skleinjung/cicd-test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
@@ -16,7 +23,7 @@
     "outputType": "script"
   },
   "dependencies": {
-    "@thrashplay/sample-library": "^0.0.2-next.0"
+    "@thrashplay/sample-library": "^0.0.2-next.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.16"
