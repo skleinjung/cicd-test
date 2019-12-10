@@ -1,6 +1,6 @@
 {
   "name": "@thrashplay/sample-library",
-  "version": "0.0.1",
+  "version": "0.0.2-next.0",
   "description": "Sample library, demonstrating how to share code in the monorepo.",
   "main": "dist/main.bundle.js",
   "types": "dist/index.d.ts",

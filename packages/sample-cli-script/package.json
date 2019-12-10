@@ -1,6 +1,6 @@
 {
   "name": "@thrashplay/sample-cli-script",
-  "version": "0.0.1",
+  "version": "0.0.2-next.0",
   "description": "Example CLI application, that uses a library from the monorepo.",
   "main": "dist/cli.js",
   "author": "Sean Kleinjung",
@@ -16,7 +16,7 @@
     "outputType": "script"
   },
   "dependencies": {
-    "@thrashplay/sample-library": "^0.0.1"
+    "@thrashplay/sample-library": "^0.0.2-next.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.16"
