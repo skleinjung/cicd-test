@@ -11,7 +11,7 @@
     ]
   },
   "scripts": {
-    "bootstrap": "yarn clean:all && yarn && yarn lerna bootstrap && yarn build",
+    "bootstrap": "yarn lerna bootstrap",
     "build": "run-s clean build:ts-config build:bundle",
     "build:ts-config": "lerna exec --stream -- node ../../scripts/create-package-tsconfig.js",
     "build:bundle": "lerna exec --stream -- webpack",
@@ -23,22 +23,28 @@
     "clean:ts-config": "rm -f packages/*/tsconfig.json",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint . --fix --ext .ts,.js",
+    "publish:tagged": "yarn lerna publish from-git",
+    "reset": "yarn clean:all && yarn && yarn bootstrap && yarn build",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "version:graduate": "yarn lerna version --conventional-graduate"
   },
   "eslintConfig": {
     "extends": "airbnb-base"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lint && yarn test"
     }
   },
   "lint-staged": {
     "*.{ts,js}": [
       "yarn lint:fix",
-      "git add"
+      "git add",
+      "yarn test --bail --findRelatedTests"
     ]
   },
   "devDependencies": {
@@ -49,6 +55,8 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.7.5",
     "@babel/preset-typescript": "^7.7.4",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/node": "^12.12.15",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
